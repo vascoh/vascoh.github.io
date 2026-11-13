@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, ArrowUpRight, CircleDashed, ImageIcon, Lock } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, CircleDashed, Eye, ImageIcon, Lock } from "lucide-react";
 import { ArchitectureDiagram } from "@/components/architecture-diagram";
 import { ContactCta } from "@/components/contact-cta";
 import { FootballDemo } from "@/components/demos/football-demo";
@@ -89,6 +89,18 @@ export default async function ProjectPage({ params }: Props) {
                 {t.visit}
                 <ArrowUpRight aria-hidden />
               </ButtonLink>
+            )}
+            {project.previewUrl && (
+              <ButtonLink href={project.previewUrl} external variant="secondary">
+                <Eye aria-hidden />
+                {t.preview}
+              </ButtonLink>
+            )}
+            {project.kind === "digital" && !project.url && !project.previewUrl && (
+              <span className="inline-flex items-center gap-2 rounded-full border border-dashed border-border-strong px-4 py-2 text-sm text-fg-subtle">
+                <Lock className="size-4" aria-hidden />
+                {t.privatePreview}
+              </span>
             )}
           </div>
           {(project.confidential || project.pendingConfirmation) && (

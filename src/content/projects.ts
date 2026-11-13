@@ -12,7 +12,9 @@ import type { L } from "@/i18n/config";
 
 export type ProjectKind = "bi" | "digital";
 export type ProjectStatus = "professional" | "published" | "development" | "concept";
-export type ProjectIcon = "database" | "gauge" | "file" | "trophy" | "home" | "cake" | "anchor" | "search";
+export type ProjectIcon =
+  | "database" | "gauge" | "file" | "trophy" | "home" | "cake" | "anchor" | "search"
+  | "car" | "radar" | "blocks" | "camera" | "bot";
 
 export interface ArchitectureStage {
   label: L;
@@ -42,6 +44,8 @@ export interface Project {
   /** Technologies — also used by the portfolio filter. Only confirmed technologies. */
   tags: string[];
   url?: string;
+  /** Public preview link (e.g. *.vercel.app) for projects not yet launched. */
+  previewUrl?: string;
   context?: L;
   problem?: L;
   objective?: L;
@@ -282,71 +286,185 @@ export const projects: Project[] = [
 
   // ───────────────────────────── AI & Digital ─────────────────────────────
   {
-    slug: "anfitrioes-pt",
+    slug: "anfitriao",
     kind: "digital",
     status: "published",
     icon: "home",
     featured: true,
-    pendingConfirmation: true,
-    title: { en: "Anfitrioes.pt", pt: "Anfitrioes.pt" },
+    title: { en: "Anfitrião — Short-Term Rental Management", pt: "Anfitrião — Gestão de Alojamento Local" },
     summary: {
-      en: "Digital platform for the Portuguese short-term rental (Alojamento Local) sector, with solutions for hosts.",
-      pt: "Plataforma digital para o setor do Alojamento Local, com soluções para anfitriões.",
+      en: "SaaS platform for Portuguese short-term rental (Alojamento Local) hosts: Airbnb and Booking.com in one calendar, properties, bookings and guests in one place, online check-in and the SIBA guest report ready before arrival.",
+      pt: "Plataforma SaaS para anfitriões de Alojamento Local: Airbnb e Booking.com num só calendário, propriedades, reservas e hóspedes num único lugar, check-in online e o boletim do SIBA pronto antes da chegada.",
     },
-    tags: ["AI-assisted Development", "LLMs"],
+    tags: ["Next.js", "Supabase", "Vercel", "AI-assisted Development"],
     url: "https://anfitrioes.pt",
     problem: {
-      en: "Hosts in the Alojamento Local sector need clear, accessible information and tools in one place.",
-      pt: "Os anfitriões de Alojamento Local precisam de informação e ferramentas claras e acessíveis num só lugar.",
+      en: "Hosts juggle several booking platforms, spreadsheets and the Portuguese legal paperwork (such as the SIBA guest report) for every stay.",
+      pt: "Os anfitriões gerem várias plataformas de reservas, folhas de cálculo e a burocracia legal portuguesa (como o boletim do SIBA) em cada estadia.",
     },
-    role: { en: "Concept, development and publication.", pt: "Conceito, desenvolvimento e publicação." },
+    objective: {
+      en: "Centralize the whole operation in one product built for Portuguese law — less tabs, less paperwork.",
+      pt: "Centralizar toda a operação num único produto feito para a lei portuguesa — menos separadores, menos papelada.",
+    },
+    features: [
+      { en: "Unified calendar for Airbnb and Booking.com", pt: "Calendário unificado Airbnb e Booking.com" },
+      { en: "Portuguese compliance (SIBA guest report)", pt: "Conformidade portuguesa (boletim do SIBA)" },
+      { en: "Online guest check-in", pt: "Check-in online dos hóspedes" },
+      { en: "Revenue and expense tracking", pt: "Registo de receitas e despesas" },
+      { en: "Properties, bookings and guests in one place", pt: "Propriedades, reservas e hóspedes num único lugar" },
+      { en: "Subscription plans (Trial, Starter, Pro, Business)", pt: "Planos de subscrição (Trial, Starter, Pro, Empresa)" },
+    ],
+    role: { en: "Product concept, development and publication.", pt: "Conceito do produto, desenvolvimento e publicação." },
     aiUsage: {
-      en: "LLMs used as a development accelerator; architecture, review and validation done by me.",
-      pt: "LLMs usados como acelerador de desenvolvimento; arquitetura, revisão e validação feitas por mim.",
+      en: "LLMs used as a development accelerator; product decisions, architecture, review and validation done by me.",
+      pt: "LLMs usados como acelerador de desenvolvimento; decisões de produto, arquitetura, revisão e validação feitas por mim.",
     },
-    gallery: [{ src: null, alt: { en: "Anfitrioes.pt homepage", pt: "Página inicial Anfitrioes.pt" } }],
+    gallery: [{ src: null, alt: { en: "Anfitrião landing page", pt: "Página inicial do Anfitrião" } }],
   },
   {
-    slug: "rc-cakes",
+    slug: "roberta-c-cakes",
     kind: "digital",
     status: "published",
     icon: "cake",
     featured: true,
-    pendingConfirmation: true,
-    title: { en: "RC Cakes", pt: "RC Cakes" },
+    title: { en: "Roberta C Cakes", pt: "Roberta C Cakes" },
     summary: {
-      en: "Website for a cake & pastry business — presenting products and services and enabling customer interaction.",
-      pt: "Website para um negócio de confeitaria — apresentação de produtos e serviços e interação com clientes.",
+      en: "Website for a celebration-cake atelier in Amora, Seixal — wedding, christening and milestone cakes designed from scratch, with a clear ordering journey and personalised consultation.",
+      pt: "Website para um atelier de bolos de celebração em Amora, Seixal — bolos de casamento, batizado e datas marcantes desenhados de raiz, com um percurso de encomenda claro e consulta personalizada.",
     },
-    tags: ["AI-assisted Development", "LLMs"],
+    tags: ["Next.js", "Supabase", "Vercel", "AI-assisted Development"],
     url: "https://robertaccakes.pt",
     problem: {
-      en: "A small business needed a professional online presence to showcase its work and make it easy for customers to get in touch.",
-      pt: "Um pequeno negócio precisava de uma presença online profissional para mostrar o seu trabalho e facilitar o contacto dos clientes.",
+      en: "A small artisan business needed a premium online presence that showcases its work and turns visitors into consultation requests.",
+      pt: "Um negócio artesanal precisava de uma presença online premium que mostrasse o seu trabalho e transformasse visitas em pedidos de consulta.",
     },
+    features: [
+      { en: "Services by occasion (weddings, christenings, birthdays, corporate)", pt: "Serviços por ocasião (casamentos, batizados, aniversários, empresas)" },
+      { en: "Transparent pricing section", pt: "Secção de preços transparente" },
+      { en: "Ordering process: consultation, mood board, tasting, booking, delivery", pt: "Processo de encomenda: consulta, mood board, degustação, reserva, entrega" },
+      { en: "FAQ and contact / consultation request", pt: "FAQ e pedido de contacto / consulta" },
+      { en: "SEO-oriented structure for local search", pt: "Estrutura orientada a SEO para pesquisa local" },
+    ],
     role: { en: "Design, development and publication.", pt: "Design, desenvolvimento e publicação." },
     aiUsage: {
       en: "LLMs used to accelerate development and content structure; decisions and review done by me.",
       pt: "LLMs usados para acelerar o desenvolvimento e a estrutura de conteúdos; decisões e revisão feitas por mim.",
     },
-    gallery: [{ src: null, alt: { en: "RC Cakes homepage", pt: "Página inicial RC Cakes" } }],
+    gallery: [{ src: null, alt: { en: "Roberta C Cakes homepage", pt: "Página inicial Roberta C Cakes" } }],
   },
   {
     slug: "patrao-mor-amora",
     kind: "digital",
-    status: "development",
+    status: "published",
     icon: "anchor",
-    pendingConfirmation: true,
-    title: { en: "Patrão Mor Amora", pt: "Patrão Mor Amora" },
+    featured: true,
+    title: { en: "Patrão Mor Amora — Nautical School", pt: "Patrão Mor Amora — Escola Náutica" },
     summary: {
-      en: "Informative website project and digital presence.",
-      pt: "Projeto de website informativo e presença digital.",
+      en: "Website for a DGRM-certified nautical school: an entry hub for the two schools (Amora and Oeiras) and a full site for the Amora unit, with its courses and contacts.",
+      pt: "Website para uma escola náutica certificada pela DGRM: um hub de entrada para as duas escolas (Amora e Oeiras) e um site completo para a unidade da Amora, com cursos e contactos.",
     },
-    tags: ["AI-assisted Development", "LLMs"],
+    tags: ["Next.js", "Supabase", "Vercel", "AI-assisted Development"],
+    url: "https://patrao-mor-amora.vercel.app",
+    features: [
+      { en: "Hub page to choose between the Amora and Oeiras schools", pt: "Página hub para escolher entre as escolas da Amora e de Oeiras" },
+      { en: "Course presentation for the Amora unit", pt: "Apresentação dos cursos da unidade da Amora" },
+      { en: "Local SEO with structured data (LocalBusiness / EducationalOrganization)", pt: "SEO local com dados estruturados (LocalBusiness / EducationalOrganization)" },
+      { en: "Security headers and cookie consent", pt: "Cabeçalhos de segurança e consentimento de cookies" },
+    ],
+    role: { en: "Design, development and publication.", pt: "Design, desenvolvimento e publicação." },
     aiUsage: {
-      en: "LLM-assisted development, with human review of structure and content.",
-      pt: "Desenvolvimento assistido por LLMs, com revisão humana da estrutura e dos conteúdos.",
+      en: "LLM-assisted development, with human review of structure, content and SEO.",
+      pt: "Desenvolvimento assistido por LLMs, com revisão humana da estrutura, conteúdos e SEO.",
     },
+    gallery: [{ src: null, alt: { en: "Patrão Mor hub page", pt: "Página hub Patrão Mor" } }],
+  },
+  {
+    slug: "sabados",
+    kind: "digital",
+    status: "development",
+    icon: "car",
+    title: { en: "Sábados — Private Transfers & Tours", pt: "Sábados — Transfers e Passeios Privados" },
+    summary: {
+      en: "Website for a private transfer and tour service that runs exclusively on Saturdays, in a Tesla Model Y driven by the host himself — with services, the booking journey and an availability request.",
+      pt: "Website para um serviço de transfers e passeios privados exclusivamente aos sábados, num Tesla Model Y conduzido pelo próprio anfitrião — com serviços, percurso de reserva e pedido de disponibilidade.",
+    },
+    tags: ["Next.js", "Vercel", "AI-assisted Development"],
+    previewUrl: "https://sabados-alpha.vercel.app",
+    features: [
+      { en: "Three service formats: transfer, discovery day, custom day", pt: "Três formatos de serviço: transfer, dia de descoberta, dia à medida" },
+      { en: "Four-step booking journey", pt: "Percurso de reserva em quatro passos" },
+      { en: "Availability request and direct contact", pt: "Pedido de disponibilidade e contacto direto" },
+    ],
+    aiUsage: {
+      en: "LLM-assisted development; content and final details still being completed.",
+      pt: "Desenvolvimento assistido por LLMs; conteúdos e detalhes finais ainda em conclusão.",
+    },
+  },
+  {
+    slug: "faresniper",
+    kind: "digital",
+    status: "development",
+    icon: "radar",
+    title: { en: "FareSniper — AI Travel Deal Radar", pt: "FareSniper — Radar de Viagens com IA" },
+    summary: {
+      en: "Web app concept that monitors flight and hotel prices, detects price drops and scores each deal, with a dashboard, saved deals and alerts.",
+      pt: "Aplicação web que monitoriza preços de voos e hotéis, deteta quedas de preço e atribui um score a cada oportunidade, com dashboard, favoritos e alertas.",
+    },
+    tags: ["Next.js", "Tailwind CSS", "shadcn/ui", "Vercel", "LLMs"],
+    features: [
+      { en: "Deals dashboard and explore view", pt: "Dashboard de oportunidades e vista de exploração" },
+      { en: "Opportunity score per deal", pt: "Score de oportunidade por deal" },
+      { en: "Price history and price-drop detection", pt: "Histórico de preços e deteção de quedas" },
+      { en: "Saved deals and alerts", pt: "Deals guardados e alertas" },
+    ],
+    aiUsage: {
+      en: "Built with LLM assistance; the product is an exploration of data collection, scoring and alerting.",
+      pt: "Construído com assistência de LLMs; o produto é uma exploração de recolha de dados, scoring e alertas.",
+    },
+  },
+  {
+    slug: "blocos",
+    kind: "digital",
+    status: "development",
+    icon: "blocks",
+    title: { en: "Blocos — Local-first Notes", pt: "Blocos — Notas Local-first" },
+    summary: {
+      en: "Notion-style pages and blocks editor that runs locally and keeps data private, installable as a PWA, with light and dark themes.",
+      pt: "Editor de páginas e blocos ao estilo do Notion, que funciona localmente e mantém os dados privados, instalável como PWA, com tema claro e escuro.",
+    },
+    tags: ["Next.js", "PWA", "Vercel", "AI-assisted Development"],
+    features: [
+      { en: "Pages and blocks editing", pt: "Edição de páginas e blocos" },
+      { en: "Local, private storage", pt: "Armazenamento local e privado" },
+      { en: "Installable PWA", pt: "PWA instalável" },
+      { en: "Light / dark theme", pt: "Tema claro / escuro" },
+    ],
+  },
+  {
+    slug: "camera-hub",
+    kind: "digital",
+    status: "development",
+    icon: "camera",
+    pendingConfirmation: true,
+    title: { en: "CameraHub", pt: "CameraHub" },
+    summary: {
+      en: "Single-page web application in development.",
+      pt: "Aplicação web single-page em desenvolvimento.",
+    },
+    tags: ["React", "Vite", "Vercel"],
+  },
+  {
+    slug: "cryptobot",
+    kind: "digital",
+    status: "development",
+    icon: "bot",
+    pendingConfirmation: true,
+    title: { en: "CryptoBot", pt: "CryptoBot" },
+    summary: {
+      en: "Python project around cryptocurrency market automation, deployed on Vercel — in development.",
+      pt: "Projeto em Python de automatização sobre o mercado de criptomoedas, publicado no Vercel — em desenvolvimento.",
+    },
+    tags: ["Python", "Vercel", "Automation"],
   },
   {
     slug: "sql-assessment-mis-monitor",
@@ -376,7 +494,8 @@ export function getProject(slug: string) {
 }
 
 export function projectsOf(kind: ProjectKind) {
-  return projects.filter((p) => p.kind === kind || p.alsoIn === kind);
+  const rank = (p: Project) => (p.alsoIn === kind ? 3 : p.status === "published" ? 0 : p.status === "professional" ? 0 : 1);
+  return projects.filter((p) => p.kind === kind || p.alsoIn === kind).sort((a, b) => rank(a) - rank(b));
 }
 
 export const allTags = Array.from(new Set(projects.flatMap((p) => p.tags))).sort();

@@ -23,8 +23,11 @@ All texts are bilingual: `{ en: "...", pt: "..." }`.
 - [ ] `site.ts` → `cv.en`, `cv.pt` (PDFs in `public/cv/`)
 - [ ] `experience.ts` → previous roles (from official CV), institution/year of the degree, year of the postgraduate
 - [ ] `certifications.ts` → years, PL-300 credential URL, issuer of the trainer certification, other certifications
-- [ ] `projects.ts` → every project has `pendingConfirmation: true`. Review the text, confirm status
-      (Published / In Development / Concept) and the stack of each AI/Digital project, then remove the flag
+- [ ] `projects.ts` → BI case studies have `pendingConfirmation: true` — review the text, then remove the flag
+- [ ] `projects.ts` → CameraHub and CryptoBot descriptions are minimal (their Vercel previews are private) — complete them
+- [ ] Blocos, FareSniper, CameraHub, CryptoBot have Vercel Authentication on → no public link. Add `previewUrl`
+      when they are public, or `url` when launched with a domain
+- [ ] Patrão Mor Amora uses `patrao-mor-amora.vercel.app` — switch `url` when the final domain is attached
 - [ ] Screenshots: `public/images/projects/*.webp` and set `gallery[].src`
 - [ ] Football demo uses **synthetic** data — replace with real (public) data screenshots if desired
 

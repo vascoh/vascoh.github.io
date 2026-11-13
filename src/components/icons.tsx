@@ -1,5 +1,9 @@
 import {
   Anchor,
+  Blocks,
+  Camera,
+  Car,
+  Radar,
   BarChart3,
   Bot,
   Cake,
@@ -27,6 +31,11 @@ export const projectIcons: Record<ProjectIcon, LucideIcon> = {
   cake: Cake,
   anchor: Anchor,
   search: Search,
+  car: Car,
+  radar: Radar,
+  blocks: Blocks,
+  camera: Camera,
+  bot: Bot,
 };
 
 export const genericIcons = {

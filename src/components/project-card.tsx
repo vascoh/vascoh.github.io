@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, FlaskConical } from "lucide-react";
+import { ArrowUpRight, FlaskConical, Globe } from "lucide-react";
 import type { Project } from "@/content/projects";
 import { href, tr, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionary";
@@ -35,6 +35,12 @@ export function ProjectCard({ project, lang, dict }: { project: Project; lang: L
         </Link>
       </h3>
       <p className="relative mt-2 line-clamp-4 text-sm leading-relaxed text-fg-muted">{tr(project.summary, lang)}</p>
+      {(project.url || project.previewUrl) && (
+        <p className="relative mt-3 flex items-center gap-1.5 font-mono text-xs text-accent-2">
+          <Globe className="size-3.5" aria-hidden />
+          {new URL((project.url || project.previewUrl)!).hostname}
+        </p>
+      )}
       <ul className="relative mt-5 flex flex-wrap gap-1.5" aria-label={dict.projects.technologies}>
         {project.tags.map((t) => (
           <li key={t} className="rounded-md bg-surface-strong/60 px-2 py-0.5 font-mono text-[0.7rem] text-fg-subtle ring-1 ring-border">
