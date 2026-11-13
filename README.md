@@ -19,7 +19,14 @@ npm run build   # static site in /out
 npm run lint    # type-check
 ```
 
-## Deploy (GitHub + Netlify CI/CD)
+## Deploy
+
+**GitHub Pages (active):** every push to `master` runs `.github/workflows/pages.yml` and publishes to https://vascoh.github.io.
+Requires *Settings → Pages → Source: GitHub Actions*.
+
+**Vercel:** the linked Vercel project also deploys `master` (`vercel.json`).
+
+### Netlify (alternative)
 Connect the repository in Netlify — `netlify.toml` already defines `npm run build` → `out`.
 Every `git push` to the production branch triggers a deploy. Set `NEXT_PUBLIC_SITE_URL` (e.g. `https://vascohenriques.pt`) in Netlify env vars for correct SEO/sitemap URLs.
 
