@@ -1,7 +1,6 @@
 import {
   Anchor,
   Blocks,
-  Camera,
   Car,
   Radar,
   BarChart3,
@@ -34,7 +33,6 @@ export const projectIcons: Record<ProjectIcon, LucideIcon> = {
   car: Car,
   radar: Radar,
   blocks: Blocks,
-  camera: Camera,
   bot: Bot,
 };
 

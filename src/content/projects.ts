@@ -14,7 +14,7 @@ export type ProjectKind = "bi" | "digital";
 export type ProjectStatus = "professional" | "published" | "development" | "concept";
 export type ProjectIcon =
   | "database" | "gauge" | "file" | "trophy" | "home" | "cake" | "anchor" | "search"
-  | "car" | "radar" | "blocks" | "camera" | "bot";
+  | "car" | "radar" | "blocks" | "bot";
 
 export interface ArchitectureStage {
   label: L;
@@ -439,19 +439,6 @@ export const projects: Project[] = [
       { en: "Installable PWA", pt: "PWA instalável" },
       { en: "Light / dark theme", pt: "Tema claro / escuro" },
     ],
-  },
-  {
-    slug: "camera-hub",
-    kind: "digital",
-    status: "development",
-    icon: "camera",
-    pendingConfirmation: true,
-    title: { en: "CameraHub", pt: "CameraHub" },
-    summary: {
-      en: "Single-page web application in development.",
-      pt: "Aplicação web single-page em desenvolvimento.",
-    },
-    tags: ["React", "Vite", "Vercel"],
   },
   {
     slug: "cryptobot",
