@@ -1,15 +1,6 @@
-# Vasco Henriques — Portfolio
+# vascoh.github.io
 
-Published at **https://vascoh.github.io** (GitHub Pages, branch `master`, root).
+Este endereço só redireciona (mantendo o caminho) para o portefólio atual:
+**https://vasco-henriques.vercel.app** — código em [vascoh/portfolio](https://github.com/vascoh/portfolio).
 
-- Source code: [`source/`](source/) — Next.js + TypeScript + Tailwind (static export)
-- Editable content: `source/src/content/` (projects, experience, certifications, skills, about, site config)
-
-## Update the site
-```bash
-cd source
-npm ci
-npm run publish   # builds and copies the static site to the repository root
-cd ..
-git add -A && git commit -m "Update site" && git push
-```
+O site Next.js que vivia aqui foi integrado nesse repositório a 2026-11-14; está no histórico do Git deste repo.
