@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /__forms.html
+
+Sitemap: https://vascoh.github.io/sitemap.xml
