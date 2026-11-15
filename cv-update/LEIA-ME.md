@@ -16,3 +16,14 @@ E ainda:
 4. `npm run build`, depois commit e push.
 
 Dados pessoais do CV (telefone, data de nascimento, morada) **não** são publicados de propósito.
+
+## Links corretos dos projetos (`src/content/projects.ts`)
+
+| Projeto | `url` |
+|---|---|
+| Anfitrião | `https://anfitrioes.pt` |
+| Roberta C Cakes | `https://www.robertaccakes.pt` |
+| Patrão Mor Amora | `https://patrao-mor-amora.vercel.app` |
+| Sábados (`previewUrl`) | `https://sabados-alpha.vercel.app` |
+
+Nos cartões de projeto, o domínio deve ser um link direto para o site (nova aba).
