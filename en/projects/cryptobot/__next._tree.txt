@@ -1,8 +1,8 @@
-:HL["/_next/static/chunks/34vgq8r4gnd6j.css","style"]
+:HL["/_next/static/chunks/0rhy7tuoq2z4k.css","style"]
 :HL["/_next/static/media/GeistMono_Variable.p.1fz3wige2_h0o.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/Geist_Variable-s.p.2hh2rqmrrgs5n.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 4:[["children",{"s":"__PAGE__","h":160}]]
 3:[["children",{"s":{"n":"slug","t":"d","k":"cryptobot","s":[]},"h":65632,"c":"$Q4"}]]
 2:[["children",{"s":"projects","h":131136,"c":"$Q3"}]]
 1:[["children",{"s":{"n":"lang","t":"d","k":"en","s":[]},"h":196656,"c":"$Q2"}]]
-0:{"b":"ERfdX2psOAgRYnjRcIzOl","t":{"t":{"s":"","h":131152,"c":"$Q1"}}}
+0:{"b":"V93LZg6WFkHU9KP-U0u0h","t":{"t":{"s":"","h":131152,"c":"$Q1"}}}

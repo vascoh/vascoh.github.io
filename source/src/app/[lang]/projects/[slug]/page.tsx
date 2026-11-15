@@ -10,7 +10,7 @@ import { projectIcons } from "@/components/icons";
 import { Eyebrow } from "@/components/section-heading";
 import { StatusBadge } from "@/components/status-badge";
 import { ButtonLink } from "@/components/ui/button";
-import { getProject, projects } from "@/content/projects";
+import { coverOf, getProject, projects } from "@/content/projects";
 import { href, locales, tr, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionary";
 import { pageMetadata } from "@/lib/seo";
@@ -116,6 +116,17 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </header>
 
+      <div className="container-page -mt-6 pt-0">
+        <figure className="glass relative overflow-hidden rounded-3xl p-2 shadow-[0_30px_80px_-40px_var(--glow)]">
+          <div className="relative aspect-[16/9] overflow-hidden rounded-[1.25rem]">
+            <Image src={coverOf(project)} alt={tr(project.title, lang)} fill priority sizes="(min-width: 1152px) 72rem, 100vw" className="object-cover" />
+          </div>
+          <figcaption className="px-3 pb-1 pt-3 text-xs text-fg-subtle">
+            {lang === "en" ? "Illustrative image — synthetic data, not a real screenshot." : "Imagem ilustrativa — dados sintéticos, não é uma captura real."}
+          </figcaption>
+        </figure>
+      </div>
+
       <div className="container-page grid gap-12 py-16 lg:grid-cols-3">
         {sections
           .filter((s) => s.body)
@@ -162,11 +173,11 @@ export default async function ProjectPage({ params }: Props) {
           ))}
       </div>
 
-      {project.gallery && project.gallery.length > 0 && (
+      {project.gallery && project.gallery.some((g) => g.src) && (
         <section className="container-page pb-16">
           <h2 className="mb-6 text-2xl font-semibold tracking-tight text-fg">{t.gallery}</h2>
           <ul className="grid gap-5 sm:grid-cols-2">
-            {project.gallery.map((g, i) => (
+            {project.gallery.filter((g) => g.src).map((g, i) => (
               <li key={i}>
                 <figure>
                   <div className="glass relative aspect-video overflow-hidden rounded-2xl">
