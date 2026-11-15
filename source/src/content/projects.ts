@@ -470,6 +470,11 @@ export const projects: Project[] = [
   },
 ];
 
+/** Illustrative cover image (synthetic data) — /public/images/projects/<slug>.webp */
+export function coverOf(p: Project) {
+  return `/images/projects/${p.slug}.webp`;
+}
+
 export function getProject(slug: string) {
   return projects.find((p) => p.slug === slug);
 }

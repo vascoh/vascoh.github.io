@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight, ExternalLink, FlaskConical } from "lucide-react";
-import type { Project } from "@/content/projects";
+import Image from "next/image";
+import { coverOf, type Project } from "@/content/projects";
 import { href, tr, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionary";
 import { projectIcons } from "./icons";
@@ -21,6 +22,16 @@ export function ProjectCard({ project, lang, dict }: { project: Project; lang: L
         aria-hidden
         className="pointer-events-none absolute -right-16 -top-16 size-40 rounded-full bg-accent/10 blur-2xl transition-opacity duration-300 group-hover:opacity-100 sm:opacity-60"
       />
+      <div className="pointer-events-none relative -mx-6 -mt-6 mb-5 aspect-[16/9] overflow-hidden border-b border-border">
+        <Image
+          src={coverOf(project)}
+          alt=""
+          fill
+          sizes="(min-width: 1024px) 24rem, (min-width: 640px) 50vw, 100vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+        />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-bg/40 to-transparent" />
+      </div>
       <div className="pointer-events-none flex items-start justify-between gap-3">
         <span className="grid size-11 place-items-center rounded-xl border border-border bg-gradient-to-br from-accent/15 to-accent-2/10 text-accent">
           <Icon className="size-5" aria-hidden />
