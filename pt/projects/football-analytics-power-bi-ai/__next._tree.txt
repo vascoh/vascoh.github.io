@@ -1,0 +1,8 @@
+:HL["/_next/static/chunks/34vgq8r4gnd6j.css","style"]
+:HL["/_next/static/media/GeistMono_Variable.p.1fz3wige2_h0o.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/Geist_Variable-s.p.2hh2rqmrrgs5n.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+4:[["children",{"s":"__PAGE__","h":160}]]
+3:[["children",{"s":{"n":"slug","t":"d","k":"football-analytics-power-bi-ai","s":[]},"h":65632,"c":"$Q4"}]]
+2:[["children",{"s":"projects","h":131136,"c":"$Q3"}]]
+1:[["children",{"s":{"n":"lang","t":"d","k":"pt","s":[]},"h":196656,"c":"$Q2"}]]
+0:{"b":"ERfdX2psOAgRYnjRcIzOl","t":{"t":{"s":"","h":131152,"c":"$Q1"}}}
